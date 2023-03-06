@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--                매핑될 DAO인터페이스의 FQDN                -->
+<mapper namespace="com.vani.mapper.userMapper">
+
+    <resultMap id="UserResult" type="com.vani.model.UserVO">
+        <result property="uid"     column="uid" />
+        <result property="upw"     column="upw" />
+        <result property="uname"     column="uname" />
+        <result property="upoint"     column="upoint" />
+    </resultMap>
+
+    <select id="findUser" resultType="map">
+        <![CDATA[
+        SELECT "uid", "upw", "uname", "upoint" FROM DOZN_RT."tbl_user"
+        ]]>
+    </select>
+</mapper>
