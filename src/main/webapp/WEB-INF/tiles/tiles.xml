@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+  <definition name="main-layout" template="/WEB-INF/jsp/template/main-layout.jsp">
+    <put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp" />
+    <put-attribute name="body" value="" />
+    <put-attribute name="footer" value="/WEB-INF/jsp/common/footer.jsp" />
+    <put-list-attribute name="stylesheets">
+      <add-attribute value="/resources/css/bootstrap/bootstrap.css"/>
+      <add-attribute value="/resources/css/bootstrap/bootstrap.css"/>
+      <add-attribute value="/resources/css/bootstrap/bootstrap-grid.css"/>
+      <add-attribute value="/resources/css/bootstrap/bootstrap-reboot.css"/>
+      <add-attribute value="/resources/css/bootstrap/bootstrap-toggle.min.css"/>
+      <add-attribute value="/resources/css/common.css"/>
+      <add-attribute value="/resources/css/dashboard.css"/>
+      <add-attribute value="/resources/select2-4.0.13/dist/css/select2.css"/>
+      <add-attribute value="/resources/css/jquery-ui.css"/>
+    </put-list-attribute>
+    <put-list-attribute name="javascripts">
+      <add-attribute value="/resources/js/jquery-3.6.3.js"/>
+      <add-attribute value="/resources/js/bootstrap/tether.min.js"/>
+      <add-attribute value="/resources/js/bootstrap/bootstrap.js"/>
+      <add-attribute value="/resources/js/bootstrap/bootstrap-toggle.min.js"/>
+      <add-attribute value="/resources/js/jquery-ui.js"/>
+      <add-attribute value="/resources/select2-4.0.13/dist/js/select2.js"/>
+      <add-attribute value="/resources/js/common.js"/>
+    </put-list-attribute>
+  </definition>
+
+  <definition name="*.do" extends="main-layout">
+    <put-attribute name="body" value="/WEB-INF/jsp/{1}.jsp" />
+  </definition>
+  <definition name="*/*.do" extends="main-layout">
+    <put-attribute name="body" value="/WEB-INF/jsp/{1}/{2}.jsp" />
+  </definition>
+  <definition name="*/*/*.do" extends="main-layout">
+    <put-attribute name="body" value="/WEB-INF/jsp/{1}/{2}/{3}.jsp" />
+  </definition>
+  <definition name="*/*/*/*.do" extends="main-layout">
+    <put-attribute name="body" value="/WEB-INF/jsp/{1}/{2}/{3}/{4}.jsp" />
+  </definition>
+
+  <!-- 타일즈 미 적용 -->
+  <definition name="list-layout" template="/WEB-INF/jsp/template/list-layout.jsp">
+    <put-attribute name="list" value="/WEB-INF/jsp/common/empty.jsp" />
+  </definition>
+
+  <definition name="*.no" extends="list-layout">
+    <put-attribute name="list" value="/WEB-INF/jsp/{1}.jsp" />
+  </definition>
+  <definition name="*/*.no" extends="list-layout">
+    <put-attribute name="list" value="/WEB-INF/jsp/{1}/{2}.jsp" />
+  </definition>
+  <definition name="*/*/*.no" extends="list-layout">
+    <put-attribute name="list" value="/WEB-INF/jsp/{1}/{2}/{3}.jsp" />
+  </definition>
+
+  <definition name="error-layout" template="/WEB-INF/jsp/template/error-layout.jsp">
+    <put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp" />
+    <put-attribute name="body" value="" />
+    <put-attribute name="footer" value="/WEB-INF/jsp/common/footer.jsp" />
+  </definition>
+
+  <definition name="*.err" extends="error-layout">
+    <put-attribute name="body" value="/WEB-INF/jsp/common/error.jsp" />
+  </definition>
+
+</tiles-definitions>
