@@ -11,7 +11,7 @@ public class TrHistoryDaoImpl extends BaseDaoBean implements TrHistoryDao {
 
     @Override
     public List<TrHistory> findAllTrHistory() throws Exception {
-        return getSqlSession().selectList("com.vani.mapper.TrHistoryMapper.findAllTrHistory");
+        return getSqlSession().selectList("com.vani.mapper.trHistoryMapper.findTrHistory");
     }
 
     @Override

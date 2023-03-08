@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--                매핑될 DAO인터페이스의 FQDN                -->
+<mapper namespace="com.vani.mapper.trHistoryMapper">
+
+    <select id="findTrHistory" resultType="map">
+        <![CDATA[
+        SELECT TR_DT, ORG_C, RLYSYS_ID, SVC_ID, CLI_MSG_ID, GBLID, PID, INS_TM, RSP_TM, TRPRC_STSC, RSP_C, TMO_OCU_YN, PVD_ID, MCT_ID, MCT_NM, CUS_LV, RMT_TP, TRF_FEE, DC_C, CUS_TP, FEE_TP, TRAN_DT, VFY_BNK, VFY_MTD, VFY_INF, CHAN_ID, OTP, OTP_REQ_ID, LNK_TP, WALT_ID, FEE_INC_YN, PRC_REC, TRAN_ID, PRI, DEBIT_TP, DEBIT_RSRC_NUM, DEBIT_NM, DEBIT_ADR, DEBIT_CTY, DEBIT_NAT, DEBIT_BRC_ID, DEBIT_BNK_ID, CUR_C, CRD_EMAIL, CRD_PHNO, CRD_BNK_ID, CRD_ISU_BY, CRD_NAT, CRD_ISU_DT, CRD_CD, CRD_TP, CRD_RSRC_NUM, CRD_NM, CRD_CTY, TRAN_AM, TRAN_DESC, PAY_REF_NO, PAY_REF_INF, ADD_INF, RES_TXN_C, VAT_AM, BNK_REF_NO, SND_DT, WDR_AF_BI_MRK, WDR_AF_BI, BZ_ERR_C, BZ_ERR_DESC, DEBIT_PHNO, WALT_TK, CUS_ID, ERR_TP, ERR_FILD_LOC, REP_REF_NO, OTP_TP, IS_REQ_OTP2, AUTH_TP, IS_BYPASS_OTP, REQ_DATA, RSP_DATA, ETC1, ETC2, ETC3, LS_CHG_DTM, LS_CHG_NM
+        FROM DOZN_RT.TB_RT_VH_TR
+        ]]>
+    </select>
+</mapper>

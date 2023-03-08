@@ -1,8 +1,6 @@
 package com.vani;
 
 import com.vani.dao.Impl.BaseDaoBean;
-import com.vani.model.TrHistory;
-import com.vani.model.UserVO;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
@@ -39,14 +37,11 @@ public class MyBatisTest extends BaseDaoBean {
     public void findTrHistory() throws Exception{
         List<Map<String, Object>> result = getSqlSession().selectList("com.vani.mapper.trHistoryMapper.findTrHistory");
         System.out.println(result);
-//        for(TrHistory item: trHistory){
-//            System.out.println(item.toString());
-//        }
     }
 
-    @Test
-    public void findUser() throws Exception{
-        List<Map<String, Object>> result = getSqlSession().selectList("com.vani.mapper.userMapper.findUser");
-        System.out.println(result);
-    }
+//    @Test
+//    public void findUser() throws Exception{
+//        List<Map<String, Object>> result = getSqlSession().selectList("com.vani.mapper.userMapper.findUser");
+//        System.out.println(result);
+//    }
 }
