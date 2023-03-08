@@ -39,9 +39,6 @@ public class MyBatisTest extends BaseDaoBean {
     public void findTrHistory() throws Exception{
         List<Map<String, Object>> result = getSqlSession().selectList("com.vani.mapper.trHistoryMapper.findTrHistory");
         System.out.println(result);
-//        for(TrHistory item: trHistory){
-//            System.out.println(item.toString());
-//        }
     }
 
     @Test
